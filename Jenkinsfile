@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "gustavoapolinario/docker-test"
-    registryCredential = 'dockerhub'
+    registryCredential = 'docker-credentials'
     dockerImage = ''
   }
   agent any
@@ -19,7 +19,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage =  docker.build("ajayk333/samedaydelivery")
+          dockerImage =  docker.build("ashokk16725/samedaydelivery")
         }
       }
     }

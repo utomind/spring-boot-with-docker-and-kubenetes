@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: webserver
-          image: ajayk333/samedaydelivery
+          image: ashokk16725/samedaydelivery:1
           resources:
             requests:
               cpu: "100m"

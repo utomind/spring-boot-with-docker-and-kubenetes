@@ -25,7 +25,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage =  docker.build("ashokk16725/samedaydelivery")
+          dockerImage =  docker.build("ashokk16725/samedaydelivery:1")
         }
       }
     }
@@ -38,5 +38,12 @@ pipeline {
         }
       }
     }
+      stage('deploy App') {
+         steps{
+            script {
+                kubernetesDeploy(configs:"dockerkubernate.yaml",kubeconfigId:"mykubeconfig")
+            }
+         }
+        }
   }
 }

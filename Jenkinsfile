@@ -1,6 +1,5 @@
 pipeline {
   environment {
-    registry = "gustavoapolinario/docker-test"
     registryCredential = 'docker-credentials'
     dockerImage = ''
   }
@@ -11,7 +10,7 @@ pipeline {
       steps {
 
         git([
-                url: "https://github.com/srajunisum/springboot-dockerdemo.git",
+                url: "https://github.com/k-ashok/spring-boot-1.git",
                 poll: true
             ])
      }
@@ -39,7 +38,5 @@ pipeline {
         }
       }
     }
-
   }
-
 }
